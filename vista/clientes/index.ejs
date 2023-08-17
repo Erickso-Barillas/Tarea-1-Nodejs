@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clientes</title>
+</head>
+<body>
+    <h1>Clientes</h1>
+    <form action="/crud_c" method="post">
+        <input type="text" id="txt_id" name="txt_id" placeholder="id">
+        <input type="text" id="txt_Nit" name="txt_Nit" placeholder="Nit">
+        <input type="text" id="txt_Nombres" name="txt_Nombres" placeholder="Nombres">
+        <input type="text" id="txt_Apellidos" name="txt_Apellidos" placeholder="Apellidos">
+        <input type="text" id="txt_Dirección" name="txt_Dirección" placeholder="Dirección">
+        <input type="text" id="txt_Telefono" name="txt_Telefono" placeholder="Telefono">
+        <input type="date" id="txt_Fn" name="txt_Fn" placeholder="dd-mm-yyyy">
+        <button type="submit" id="btn_crear" name="btn_crear" value="crear">Crear</button>
+        <button type="submit" id="btn_actualizar" name="btn_actualizar" value="actualizarr">Actualizar</button>
+        <button type="submit" id="btn_borrar" name="btn_borrar" value="borrar">Borrar</button>
+    </form>
+    <table border="1px">
+        <thead>
+            <th>Id</th>
+            <th>Nit</th>
+            <th>Nombres</th>
+            <th>Apellidos</th>
+            <th>Dirección</th>
+            <th>Telefono</th>
+            <th>Fecha_Nacimiento</th>
+        </thead>
+        <tbody>
+            <% resultado.forEach((Cliente) => { %>
+            <tr>
+                <td><%= Cliente.id_Clientes %></td>
+                <td><%= Cliente.Nit %></td>
+                <td><%= Cliente.Nombres %></td>
+                <td><%= Cliente.Apellidos %></td>              
+                <td><%= Cliente.Dirección %></td>
+                <td><%= Cliente.Telefono %></td>
+                <td><%= Cliente.Fecha_Nacimiento %></td>
+            </tr>
+            <% }); %>
+        </tbody>
+</body>
+</html>
